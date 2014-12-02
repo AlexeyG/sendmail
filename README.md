@@ -1,6 +1,6 @@
-# sendmail
+## About
 
-sendmail is a simple Python wrapper around the unix sendmail utility. It allows for sending emails from python witout specifying an SMTP server.
+*sendmail* is a simple Python wrapper around the unix sendmail utility. It allows for sending emails from python witout specifying an SMTP server.
 
 The sendmail code was taken from the [webpy](https://github.com/webpy/webpy) framework.
 
