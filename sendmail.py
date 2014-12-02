@@ -1,4 +1,6 @@
 import subprocess
+import getpass
+import platform
 
 def dictadd(*dicts):
     """
@@ -49,6 +51,11 @@ def sendmail(from_address, to_address, subject, message, headers = None, **kw):
     `/usr/sbin/sendmail`, the typical location for the sendmail-style
     binary. To use sendmail from a different path, set `web.config.sendmail_path`.
     '''
+    if from_address is None or from_address == '' :
+        username = getpass.getuser()
+        hostname = platform.node()
+        from_address = '%s@%s' % (username, hostname)
+
     attachments = kw.pop("attachments", [])
     mail = _EmailMessage(from_address, to_address, subject, message, headers, **kw)
 
